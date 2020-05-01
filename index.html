@@ -10,10 +10,10 @@
 <body>
     <h1>Todo MVC</h1>
     <div class="gauche">
-       <form method="post">
-           <input type="text" placeholder="First name" id="first" onblur="veriName(this)" required> <br><br>
-           <input type="text" placeholder="Last name" id="last" onblur="veriName(this)"  required> <br><br>
-           <input type="text" placeholder="Adresse" id="adresse" onblur="veriAdresse(this)" required>
+        <form onsubmit="return verifForm(this)">
+           <input type="text" name="first" placeholder="First name" id="first" onblur="veriName(this)" required> <br><br>
+           <input type="text" name="last" placeholder="Last name" id="last" onblur="veriName(this)"  required> <br><br>
+           <input type="text" name="adresse" placeholder="Adresse" id="adresse" onblur="veriAdresse(this)" required>
            <input type="button" value="entre" id="boutton" onclick="fonction()"><br><br>
        </form>
        <table id="table">

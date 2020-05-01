@@ -29,6 +29,20 @@ function veriAdresse(champ) {
         
     }
 }
+function verifForm(f)
+{
+   var firstOk = verifName(f.pseudo);
+   var adresseOk = verifAdresse(f.adresse);
+   var lastOk = veriName(f.last);
+   
+   if(firstOk && adresseOk && lastOk)
+      return true;
+   else
+   {
+      alert("Veuillez remplir correctement tous les champs");
+      return false;
+   }
+}
 function recuperationData(){
     let last = document.getElementById("last").value;
     let table = document.getElementById("table");
