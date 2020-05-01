@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo MVC</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Todo MVC</h1>
+    <div class="gauche">
+       <form method="post">
+           <input type="text" placeholder="First name" id="first" onblur="veriName(this)" required> <br><br>
+           <input type="text" placeholder="Last name" id="last" onblur="veriName(this)"  required> <br><br>
+           <input type="text" placeholder="Adresse" id="adresse" onblur="veriAdresse(this)" required>
+           <input type="button" value="entre" id="boutton" onclick="fonction()"><br><br>
+       </form>
+       <table id="table">
+           <tr>
+               <th>Id</th>
+               <th>First</th>
+               <th>Last</th>
+               <th>Adresse</th>
+           </tr>
+       </table>
+
+    </div>
+    <div class="droite">
+        <select name="choice" id="option1">
+           <option value=""></option>
+            <option value="asd" onclick="dsd()">Z-A</option>
+            <option value="dsd" onclick="asd()">A-Z</option>
+        </select>
+        <select name="opt" id="option2">
+            <option value="firstName">firstName</option>
+            <option value="lastName">lastName</option>
+            <option value="Adresse">Adresse</option>
+        </select>
+    </div>
+    
+</body>
+</html>

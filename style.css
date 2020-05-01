@@ -1,0 +1,20 @@
+.gauche{
+    float: left;
+    padding-left: 10px;
+}
+.droite{
+    float: right;
+    padding-right: 10px;
+}
+
+table {
+    background-color: black;
+    color: cornsilk;
+    border-collapse:collapse;
+    width: 100%;
+    border: 1px solid;
+}
+
+h1 {
+    padding-left: 50%;
+}
