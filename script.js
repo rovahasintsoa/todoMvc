@@ -1,34 +1,58 @@
 var i=1;
 var data1 = [];
-function surligne(champ, erreur)
-{
-   if(erreur)
-      champ.style.backgroundColor = "#fba";
-   else
-      champ.style.backgroundColor = "";
-}
-function veriName(champ) {
-    let regex =/^[A-Z]([a-z]){1,29}/;
-    if (!regex.test(champ.value)) {
-        surligne(champ, true);
-        return false;
-    } else {
-        surligne(champ, false);
+
+function veriLast(champ) {
+    let regex =/^[A-Z][a-z]{2,}/;
+    let regeX = /[0-9]/;
+    let ch = champ.value;
+    let p= document.getElementById('pL');
+    let xl ="Erreur, last name ne contenir pas une chiffre."
+    while(p.firstChild){
+        p.removeChild(p.firstChild);
+    }
+    if (regex.test(ch) && !regeX.test(ch)) {
         return true;
-        
+    } else {
+      let text =document.createTextNode(xl);
+      document.getElementById("pL").appendChild(text);;
+        return false; 
+    }
+}function veriFirst(champ) {
+    let regex =/^[A-Z][a-z]{2,}/;
+    let regeX = /[0-9]/;
+    let ch = champ.value;
+    let pF= document.getElementById('pF');
+    let xF ="Erreur, first name ne contenir pas une chiffre."
+    while(pF.firstChild){
+        pF.removeChild(pF.firstChild);
+    }
+    if (regex.test(ch) && !regeX.test(ch)) {
+        return true;
+    } else {
+      let text =document.createTextNode(xF);
+      document.getElementById("pF").appendChild(text);
+        return false; 
     }
 }
 function veriAdresse(champ) {
-    let regex =/^([0-9]{2})\s+Rue\s[A-Z][a-z]{2,}\s[A-Z][a-z]{2,},[0-9]{2,5}\s[A-Z][a-z]{3,},\w{3,}/;
-    if (!regex.test(champ.value)) {
-        surligne(champ, true);
-        return false;
-    } else {
-        surligne(champ, false);
+    let regex =/^[0-9]{2}[\s]Rue\s[,a-zA-Z\s]{1,}[0-9]{1,}\s[,a-zA-Z\s]{1,}/;
+    let ch =champ.value;
+    let pA = document.getElementById("pA");
+    let textA = "erreur, entre une adress correcte (ex:14 Rue Lionel Terray, 69740 Genas, France)";
+    while(pA.firstChild){
+        pA.removeChild(pA.firstChild);
+    }
+    if (regex.test(ch)) {
         return true;
         
+    } else {
+        let xAdresse = document.createTextNode(textA);
+        document.getElementById("pA").appendChild(xAdresse);
+        return false;   
     }
+    console.log(regex.test(ch)); 
 }
+
 function verifForm(f)
 {
    var firstOk = verifName(f.pseudo);
