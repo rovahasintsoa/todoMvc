@@ -18,3 +18,7 @@ table {
 h1 {
     padding-left: 50%;
 }
+p {
+    color: red;
+    font-size: 70%;
+}
