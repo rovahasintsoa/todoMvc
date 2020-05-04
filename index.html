@@ -9,21 +9,22 @@
 </head>
 <body>
     <h1>Todo MVC</h1>
+    <img onclick="fonction()" id="boutton" src="icons8-add-48.png">
     <div class="gauche">
         <form onsubmit="return verifForm(this)">
             <p id="pF"></p> <br>
-           <input type="text" name="first" placeholder="First name" id="first" onblur="veriFirst(this)" required> <br><br>
+           <input type="text" name="first" placeholder="First name" id="first" onblur="veriFirst(this)" style="width: 310px;" required> <br><br>
            <p id="pL"></p>
-           <input type="text" name="last" placeholder="Last name" id="last" onblur="veriLast(this)"  required> <br><br>
+           <input type="text" name="last" placeholder="Last name" id="last" onblur="veriLast(this)" style="width: 310px;"  required> <br><br>
            <p id="pA"></p>
-           <input type="text" name="adresse" placeholder="Adresse" id="adresse" onblur="veriAdresse(this)" required>
-           <input type="button" value="entre" id="boutton" onclick="fonction()"><br><br>
-       </form>
+           <input type="text" name="adresse" placeholder="Adresse" id="adresse" onblur="veriAdresse(this)" style="width: 310px;" required> <br><br>
+           
+        </form>
        <table id="table">
            <tr>
                <th>Id</th>
-               <th>First</th>
-               <th>Last</th>
+               <th>First name</th>
+               <th>Last name</th>
                <th>Adresse</th>
            </tr>
        </table>
