@@ -1,18 +1,19 @@
-.gauche{
-    float: left;
-    padding-left: 10px;
+form{
+    margin-left: 70px;
 }
 .droite{
-    float: right;
-    padding-right: 10px;
+  margin-left: 950px;
+  margin-top: -250px;
 }
 
 table {
     background-color: black;
-    color: cornsilk;
+    color: turquoise;
     border-collapse:collapse;
-    width: 100%;
-    border: 1px solid;
+    width: auto;
+    padding: 15px;
+    border: 1px solid blue;
+    margin-left: 70px;
 }
 
 h1 {
@@ -21,4 +22,7 @@ h1 {
 p {
     color: red;
     font-size: 70%;
+}
+#boutton {
+    margin-left: 650px;
 }

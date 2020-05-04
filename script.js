@@ -1,10 +1,9 @@
 var i=1;
 var data1 = [];
-
-function veriLast(champ) {
+function veriLast() {
     let regex =/^[A-Z][a-z]{2,}/;
     let regeX = /[0-9]/;
-    let ch = champ.value;
+    let ch = document.getElementById("last").value;
     let p= document.getElementById('pL');
     let xl ="Erreur, last name ne contenir pas une chiffre."
     while(p.firstChild){
@@ -14,13 +13,14 @@ function veriLast(champ) {
         return true;
     } else {
       let text =document.createTextNode(xl);
-      document.getElementById("pL").appendChild(text);;
+      document.getElementById("pL").appendChild(text);
         return false; 
     }
-}function veriFirst(champ) {
+}
+function veriFirst() {
     let regex =/^[A-Z][a-z]{2,}/;
     let regeX = /[0-9]/;
-    let ch = champ.value;
+    let ch = document.getElementById("first").value;
     let pF= document.getElementById('pF');
     let xF ="Erreur, first name ne contenir pas une chiffre."
     while(pF.firstChild){
@@ -31,12 +31,12 @@ function veriLast(champ) {
     } else {
       let text =document.createTextNode(xF);
       document.getElementById("pF").appendChild(text);
-        return false; 
+      return false; 
     }
 }
-function veriAdresse(champ) {
+function veriAdresse() {
     let regex =/^[0-9]{2}[\s]Rue\s[,a-zA-Z\s]{1,}[0-9]{1,}\s[,a-zA-Z\s]{1,}/;
-    let ch =champ.value;
+    let ch =document.getElementById('adresse').value;
     let pA = document.getElementById("pA");
     let textA = "erreur, entre une adress correcte (ex:14 Rue Lionel Terray, 69740 Genas, France)";
     while(pA.firstChild){
@@ -53,23 +53,8 @@ function veriAdresse(champ) {
     console.log(regex.test(ch)); 
 }
 
-function verifForm(f)
-{
-   var firstOk = verifName(f.pseudo);
-   var adresseOk = verifAdresse(f.adresse);
-   var lastOk = veriName(f.last);
-   
-   if(firstOk && adresseOk && lastOk)
-      return true;
-   else
-   {
-      alert("Veuillez remplir correctement tous les champs");
-      return false;
-   }
-}
 function recuperationData(){
     let last = document.getElementById("last").value;
-    let table = document.getElementById("table");
     let first = document.getElementById("first").value;
     let adresse = document.getElementById("adresse").value;
     data ={ lastName:last, firstName: first, add:adresse};
@@ -101,6 +86,7 @@ function tableCreate(data1) {
 
 }
 function fonction(){
+    if(veriAdresse() && veriFirst() && veriLast())
     tableCreate(recuperationData());
 }
 function sorting_ascendingly_on(arr, prop){
